@@ -1,9 +1,11 @@
 import React from 'react'
-
-class Product extends React.Component{
-    state = {
-      number: 0
-    }
+import moment from 'moment'
+class Order  extends React.Component{
+  state = {
+    product: null,
+    number: null,
+    timeDate: null
+  }
   handleIncrement = () => {
     this.setState((prevState) => ({
       number: prevState.number + 1
@@ -22,14 +24,13 @@ class Product extends React.Component{
   render() {
     return (
       <div>
-        <h3>
-        {this.props.name} ${this.props.price} |  Quantity: {this.state.number}
-         <button onClick={ this.handleIncrement}> + </button>
-         <button onClick={ this.handleDecrement}> - </button>
-        </h3>
+        <h2>Order</h2>
+        <p>HELLO</p>
+        <button onClick={ this.handleIncrement}> + </button>
+        <button onClick={ this.handleDecrement}> - </button>
+        <h3>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h3>
       </div>
     )
   }
 }
-
-export default Product;
+export default Order;
